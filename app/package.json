@@ -1,0 +1,27 @@
+{
+  "name": "backend_5",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./bin/www.js  ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuhan70/qlife.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuhan70/qlife/issues"
+  },
+  "homepage": "https://github.com/yuhan70/qlife#readme",
+  "bin": {
+    "backend_5": "bin/www.js"
+  },
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}
