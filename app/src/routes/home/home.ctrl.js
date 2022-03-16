@@ -1,5 +1,7 @@
 "use strict";
 
+const UserStorage = require("../../models/UserStorage");
+
 const output ={
     home: (req, res) => {
         res.render("home/index");
@@ -9,30 +11,26 @@ const output ={
     },
 };
 
-const users = {
-    id: ["yuhan", "test", "test2"],
-    psword: ["1234","1234","12345"],
-};
 
 const process ={
     login: (req, res) => {
         const id = req.body.id,
         psword = req.body.psword;
-             
-        //console.log(id,psword);   // body 를 받아 올 수가 없음.. body-parser 를 설치해야함.
-       //console.log("hello");
+ 
+        //console.log(UserStorage.getUsers("psword"));
+        
+        const users = (UserStorage.getUsers("id","psword"));
+        const response ={};
         if(users.id.includes(id)){
             const idx = users.id.indexOf(id);
             if(users.psword[idx] === psword){
-                return res.json({
-                    success : true,
-                })
+                response.success = true;
+                return res.json(response);                
             }
         }
-        return res.json({
-            success :false,
-            msg: "로그린에 실패하셨습니다."
-        })
+        response.success = false;
+        response.msg = "로그인에 실패하셨습니다.";
+        return res.json(response);        
     },
 }; 
 
