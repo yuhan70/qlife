@@ -9,14 +9,21 @@ const id = document.querySelector("#id"),
 console.log("Hello Register");
 
 registerBtn.addEventListener("click",register); 
-function register(){
-   
-    console.log(id.value);
-    const req ={
+function register(){   
+
+    if(!id.value) return alert("아이디를 입력해주십시요.");
+    
+    //console.log(psword.value);
+    //console.log(confirmPsword.value);
+
+     if(psword.value !== confirmPsword.value){
+        return alert("비밀번호가 일치하지 않습니다.");
+     }
+    //console.log(id.value);
+    const req = {
         id: id.value,
         name :name.value,
-        psword: psword.value,
-        confirmPsword : confirmPsword.value,
+        psword: psword.value,        
     };
    
     console.log(req);
