@@ -8,8 +8,12 @@ const output ={
         res.render("home/index");
     },
     login : (req, res) => {
-        res.render("home/login")
+        res.render("home/login");
     },
+
+    register :(req, res) => {
+        res.render("home/register");
+    }
 };
 
 
@@ -19,7 +23,7 @@ const process ={
         const response = user.login();
         //console.log(response);
         return res.json(response);
-       
+          
        
          // const id = req.body.id,
         // psword = req.body.psword;              
