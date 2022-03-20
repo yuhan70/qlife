@@ -41,6 +41,7 @@ function register(){
          if(res.success){
              location.href = "/login";
          }else{
+            if(res.err) return alert(res.err);
              alert(res.msg)              // 서버에서 전달한 메시지를 alert으로 보냄.
          }           
     }  )

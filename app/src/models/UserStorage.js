@@ -14,11 +14,12 @@ class UserStorage{
 
     static getUsersInfo(id){  
         return new Promise((resolve,reject)=> {      // mysql 의 경우에 Promise 을 지원하지 않아서 직적 프로그램을 해주어야 함.
+            //const query ="select * from users where id =?;";
             const query ="select * from users where id =?;";
-
             db.query(query,[id], (err, data)=>{            
                 if(err) reject(`${err}`);
-                console.log(data[0]); 
+                //console.log(data[0]); 
+                else 
                 resolve(data[0]);
             });
         });     
@@ -33,7 +34,8 @@ class UserStorage{
                 query,
                 [userInfo.id, userInfo.name, userInfo.psword],
                 (err)=>{            
-                    if(err) reject(`${err}`);                    
+                    if(err) reject(`${err}`);  
+                    else                   
                     resolve({success : true});
                 });
             });     
