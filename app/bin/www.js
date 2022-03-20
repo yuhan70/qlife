@@ -1,6 +1,6 @@
 "use strict";
 
-const PORT = 7001;
+const PORT = process.env.PORT || 7001;
 
 const start = require("../app");
 

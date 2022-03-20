@@ -2,7 +2,8 @@
 
 const express =require("express");
 const bodyParser = require("body-parser");  // 사용을 할 때에 미들웨어를 등록을 해주어애 한다.
-
+const dotenv =require("dotenv");
+dotenv.config();
 
 const app = express();
 
